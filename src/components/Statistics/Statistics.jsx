@@ -1,4 +1,4 @@
-import css from 'components/Statistics/Statistics.module.css'; // Импорт стилей CSS
+// import css from 'components/Statistics/Statistics.module.css'; // Импорт стилей CSS
 import React, { Component } from "react";
 import Notification from '../Notification/Notification';
 
