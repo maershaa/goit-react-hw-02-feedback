@@ -10,11 +10,12 @@ class App extends Component {
     bad: 0,
     };
   
-    handleAddReview = (evt) => {
+      handleAddReview = (evt) => {
     this.setState((prevState) => ({
       [evt]: prevState[evt] + 1
     }));
     };
+
   
   render() {
        const { good, neutral, bad } = this.state;

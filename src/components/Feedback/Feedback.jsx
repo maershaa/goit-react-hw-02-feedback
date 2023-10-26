@@ -18,19 +18,19 @@ class FeedbackOptions extends Component {
         <button
           className={css.customButton}
           type="button"
-          onClick={this.handleAddReview}>
+          onClick={() => this.handleAddReview('good')}>
           good
         </button>
         <button
           className={css.customButton}
           type="button"
-          onClick={this.handleAddReview}>
+          onClick={() => this.handleAddReview('neutral')}>
           neutral
         </button>
         <button
           className={css.customButton}
           type="button"
-          onClick={this.handleAddReview}>
+          onClick={() => this.handleAddReview('bad')}>
           bad
         </button>
       </div>
