@@ -1,5 +1,5 @@
 import { FeedbackOptions }  from 'components/Feedback/Feedback';
-import Statistics from 'components/Statistics/Statistics';
+import Statistics2 from 'components/Statistics/Statistics2';
 import Section from 'components/Section/Section';
 import React, { Component } from "react";
 
@@ -27,7 +27,7 @@ class App extends Component {
   options={Object.keys(this.state)}
   onLeaveFeedback={this.onLeaveFeedback}
 />
-        <Statistics good={good} neutral={neutral} bad={bad} />
+        <Statistics2 good={good} neutral={neutral} bad={bad} />
       </Section>
   );
   }
