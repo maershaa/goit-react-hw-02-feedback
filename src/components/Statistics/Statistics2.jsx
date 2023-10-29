@@ -4,28 +4,40 @@ import Notification from '../Notification/Notification';
 
 
 class Statistics extends Component {
-render() {
-    const { good, neutral, bad } = this.props; // Принимаем значения из props
 
-    const totalFeedback = good + neutral + bad; // Вычисляем общее количество отзывов
-    const positivePercentage = Math.round((100 / totalFeedback) * good); // Вычисляем процент положительных отзывов
+      // Вспомогательный метод для вычисления общего количества отзывов
+  countTotalFeedback() {
+    const { good, neutral, bad } = this.props;
+    return good + neutral + bad;
+  }
+
+  // Вспомогательный метод для вычисления процента положительных отзывов
+  countPositiveFeedbackPercentage() {
+    const { good } = this.props;
+    const totalFeedback = this.countTotalFeedback();
+    return totalFeedback > 0 ? Math.round((100 / totalFeedback) * good) : 0;
+  }
+    
+    
+render() {
+
     
 
     return (
       <div>
         {totalFeedback >= 1 ? ( // Отображать блок статистики только если есть хотя бы один отзыв
           <ul className={css.resultsContainer}>
-            <li>Good: {good}</li>
-            <li>Neutral: {neutral}</li>
-            <li>Bad: {bad}</li>
+            <li>Good: {this.props.good}</li>
+            <li>Neutral: {this.props.neutral}</li>
+            <li>Bad: {this.props.bad}</li>
             {/* Отображать элемент "Total" только в том случае, если good + neutral + bad >= 1, иначе его не отображать */}
             {totalFeedback >= 1 && (
-              <li>Total: {totalFeedback}</li>
+              <li>Total: { this.countTotalFeedback()}</li>
             )}
 
             {/* Отображать элемент "Positive feedback" только в том случае, если процент положительных отзывов >= 1, иначе его не отображать */}
             {positivePercentage >= 1 && (
-              <li>Positive feedback: {positivePercentage}%</li>
+              <li>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
             )}
           </ul>
         ) : (
