@@ -13,8 +13,8 @@ class App extends Component {
   onLeaveFeedback = evt => { 
     console.log(evt.target)
     const { name } = evt.target;
-    this.setState(pervState => {
-      return { [name]: pervState[name] + 1 };
+    this.setState(prevState => {
+      return { [name]: prevState[name] + 1 };
     })
   }
 
