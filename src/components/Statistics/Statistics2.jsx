@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Notification from '../Notification/Notification';
 
 
-class Statistics extends Component {
+class Statistics2 extends Component {
 
       // Вспомогательный метод для вычисления общего количества отзывов
   countTotalFeedback() {
@@ -48,4 +48,4 @@ render() {
   }
 }
 
-export default Statistics;
+export default Statistics2;
